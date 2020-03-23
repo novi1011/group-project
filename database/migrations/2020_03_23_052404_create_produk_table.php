@@ -18,7 +18,6 @@ class CreateProdukTable extends Migration
             $table->text('Product_name');
             $table->string('Supplier_id');
             $table->decimal('Unit_price');
-            $table->bit();
             $table->timestamps();
         });
     }
