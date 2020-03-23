@@ -52,10 +52,10 @@
                             @foreach($produks as $item) 
                                 <tr id="tr_{{$item->id}}">
                                     <td><input type="checkbox" class="sub_chk" data-id="{{$item->id}}"></td>
-                                    <td>{{$item->title}}</td>
-                                    <td>{{$item->desc}}</td>
-                                    <td>{{$item->created_at}}</td>
-                                    <td>{{$item->updated_at}}</td>
+                                    <td>{{$item->Produk_id}}</td>
+                                    <td>{{$item->Product_name}}</td>
+                                    <td>{{$item->Supplier_id}}</td>
+                                    <td>{{$item->Unit_price}}</td>
                                     <td>
                                         <form method="POST" action="{{ route('forms.destroy',$item->id) }}">
                                              {{csrf_field()}}
