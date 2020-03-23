@@ -19,22 +19,23 @@
                                 <th>Updated_at</th>
                                 <th colspan="3">action</th>
                             </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            
-                                    <!-- <td>
-                                        
+                            @foreach($produk as $item)
+                                <tr>
+                                    <td>{{$item->Produk_id}}</td>
+                                    <td>{{$item->Product_name}}</td>
+                                    <td>{{$item->Supplier_id}}</td>
+                                    <td>{{$item->Unit_price}}</td>
+                                    <td>{{$item->created_at}}</td>
+                                    <td>{{$item->updated_at}}</td>
+                                    <td>
+                                            
                                         <a href="#" class="btn btn-warning btn-sm">View</a>
                                         <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin Mau Di Hapus?');">Delete</button>
-                                        
-                                    </td> -->
+                                        <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                                            
+                                    </td>
                                 </tr>
+                                @endforeach
                         </table>
                 </div>
             </div>
