@@ -13,15 +13,15 @@
                 {{csrf_field()}}
 
                         <div class="form-group row">
-                            <label for="title" class="col-md-4 col-form-label text-md-right">Product_id</label>
+                            <label for="title" class="col-md-4 col-form-label text-md-right">Product ID</label>
 
                             <div class="col-md-6">
-                                <input type="string" name="product-id" value="{{ $forms->product_id }}">
+                                <input type="increment" name="product-id" value="{{ $forms->product_id }}">
                             </div>
-                        
+
                         </div>
                         <div class="form-group row">
-                            <label for="title" class="col-md-4 col-form-label text-md-right">Product_name</label>
+                            <label for="title" class="col-md-4 col-form-label text-md-right">Product Name</label>
 
                             <div class="col-md-6">
                                 <input type="text" name="product_name" value="{{ $forms->product_name }}">
@@ -32,7 +32,7 @@
                             <label for="title" class="col-md-4 col-form-label text-md-right">Supplier_id</label>
 
                             <div class="col-md-6">
-                                <input type="string" name="supplier_id" value="{{ $forms->supplier_id }}">
+                                <input type="int" name="supplier_id" value="{{ $forms->supplier_id }}">
                             </div>
                         </div>
 
