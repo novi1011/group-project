@@ -11,9 +11,8 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Forms &nbsp&nbsp
-                        <a href="{{route('forms.create')}}" class="btn btn-success btn-sm">Add New</a>
-                        <button  class="btn btn-danger delete_all btn-sm" data-url="{{ url('myproductsDeleteAll') }}">Delete All Selected</button>
-                        <a class="btn btn-primary btn-sm" style="margin-left:20px;" href="{{ route('forms.index') }}">Refresh</a>
+                        
+                        
                 </div>
                 <br>
 
@@ -50,20 +49,20 @@
                             </thead>
                             @if($produks->count())
                             @foreach($produks as $item) 
-                                <tr id="tr_{{$item->id}}">
-                                    <td><input type="checkbox" class="sub_chk" data-id="{{$item->id}}"></td>
+                                <tr id="tr_{{$item->Produk_id}}">
+                                    <td><input type="checkbox" class="sub_chk" data-id="{{$item->Produk_id}}"></td>
                                     <td>{{$item->Produk_id}}</td>
                                     <td>{{$item->Product_name}}</td>
                                     <td>{{$item->Supplier_id}}</td>
                                     <td>{{$item->Unit_price}}</td>
                                     <td>
-                                        <form method="POST" action="{{ route('forms.destroy',$item->id) }}">
+                                        <!-- <form method="POST" action="{{ route('forms.destroy',$item->id) }}">
                                              {{csrf_field()}}
                                              {{method_field('DELETE')}}
                                         <a href="{{ route('forms.show',$item->id) }}" class="btn btn-warning btn-sm">View</a>
                                         <a href="{{route('forms.edit',$item->id)}}" class="btn btn-primary btn-sm">Edit</a>
                                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin Mau Di Hapus?');">Delete</button>
-                                        </form>
+                                        </form> -->
                                     </td>
                                         
                                         
@@ -74,7 +73,7 @@
                   
                 </div>
             </div>
-            {{$forms->links()}}
+            <!-- {{$produk->links()}} -->
         </div>
     </div>
 </div>
