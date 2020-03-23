@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   PT JVC KENWOOD 3
+                   PT JVC KENWOOD
                 </div>
 
                 <!-- <div class="links">
