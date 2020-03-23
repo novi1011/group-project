@@ -16,7 +16,7 @@
                             <label for="title" class="col-md-4 col-form-label text-md-right">Product_id</label>
 
                             <div class="col-md-6">
-                                <input type="int" name="product-id" value="{{ $forms->product_id }}">
+                                <input type="string" name="product-id" value="{{ $forms->product_id }}">
                             </div>
                         
                         </div>
@@ -29,10 +29,10 @@
                         </div>
  
                         <div class="form-group row">
-                            <label for="title" class="col-md-4 col-form-label text-md-right">Suplier_id</label>
+                            <label for="title" class="col-md-4 col-form-label text-md-right">Supplier_id</label>
 
                             <div class="col-md-6">
-                                <input type="srting" name="suplier_id" value="{{ $forms->suplier_id }}">
+                                <input type="string" name="supplier_id" value="{{ $forms->supplier_id }}">
                             </div>
                         </div>
 
