@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   Belajar Laravel
+                   PT JVC KENWOOD
                 </div>
 
                 <!-- <div class="links">
