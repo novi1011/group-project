@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Produk;
 
 class ProdukController extends Controller
 {
@@ -13,7 +14,8 @@ class ProdukController extends Controller
      */
     public function index()
     {
-      return view('penjualan/index');
+      $produk=Produk::all();
+      return view('penjualan.index',compact('produk'));
     
     }
 
@@ -57,7 +59,7 @@ class ProdukController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
