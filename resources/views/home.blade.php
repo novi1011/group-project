@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <a class="btn btn-primary" href="{{route('produk.index')}}">Produk</a>
                 </div>
             </div>
         </div>
