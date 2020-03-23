@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Produk;
 
 class ProdukController extends Controller
 {
@@ -13,12 +14,9 @@ class ProdukController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
+      
       return view('penjualan.index');
-=======
-      return view('penjualan/index');
     
->>>>>>> 1f93bf2aa93bcfae19923c880381ddb081b50bd1
     }
 
     /**
