@@ -38,16 +38,10 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'Product_name'=> 'required|min:5',
-            'Supplier_id'=> 'required|min:1|max:5',
-            'Unit_price'=> 'required|min:5',
-            'Quantity'=> 'required|min:1',
-        ]);
-
-        Produk::create($request->all());
-        return $produks;
-        // return redirect()->route('produk.index');   
+        
+        $produk= produk::create($request->all());
+         
+         return redirect()->route('produk.index')->with('pesan','Data Berhasil Ditambah');    
     }
 
     /**
