@@ -38,7 +38,17 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'Product_name'=> 'required|min:5',
+            'Supplier_id'=> 'required|min:1|max:5',
+            'Unit_price'=> 'required|min:5',
+            'Quantity'=> 'required|min:1',
+        ]);
+
+
+        Produk::create($request->all());
+        return redirect()->route('produk.index');
+        
     }
 
     /**
@@ -49,7 +59,8 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        //
+        $produk=Produk::find($id);  //masih error
+        return view('penjualan/show', compact('produk'));
     }
 
     /**
@@ -60,7 +71,8 @@ class ProdukController extends Controller
      */
     public function edit($id)
     {
-        
+        $produk= Produk::find($id);
+        return view('produk.edit', ['produk'=> $produks]);
     }
 
     /**

@@ -31,8 +31,8 @@
                                     <td>{{$item->created_at}}</td>
                                     <td>{{$item->updated_at}}</td>
                                     <td>   
-                                        <a href="#" class="btn btn-warning btn-sm">View</a>
-                                        <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                                        <a href="{{route ('produk.show', $item->Produk_id)}}" class="btn btn-warning btn-sm">View</a>
+                                        <a href="{{route ('produk.edit', $item->Produk_id)}}" class="btn btn-primary btn-sm">Edit</a>
                                         <a href="#" class="btn btn-danger btn-sm">Delete</a>
                                             
                                     </td>

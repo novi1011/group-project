@@ -8,11 +8,11 @@
                 <div class="panel-heading"><h2>Form Tambah Data</h2></div><br>
                     <div class="card-body">
 
-  <form method="POST" action="#">
-<form>
+  <form action="{{route ('produk.store')}}" method="POST">
+
     <div class="form-group">
         <label for="Product_name">Product Name</label>
-        <input type="text" class="form-control" id="Product_name" placeholder="Masukkan harga satuan" name="Product_name">
+        <input type="text" class="form-control" id="Product_name" placeholder="Masukkan nama produk" name="Product_name" >
     </div>
     <div class="form-group">
         <label for="Supplier_id">Supplier ID</label>
@@ -23,21 +23,20 @@
         <input type="text" class="form-control" id="Unit_price" placeholder="Masukkan harga satuan" name="Unit_price">
     </div>
     <div class="form-group">
-        <label for="quantity">Quantity</label>
-        <input type="text" class="form-control" id="quantity" placeholder="Masukkan satuan" name="quantity">
+        <label for="Quantity">Quantity</label>
+        <input type="text" class="form-control" id="Quantity" placeholder="Masukkan satuan" name="Quantity">
     </div>
-</form>
+
+   
     <div class="col-md-10 offset-md-2">
         <button type="submit" class="btn btn-primary">{{__('Save')}} </button>
         <a href="{{route ('produk.index')}}" class="btn btn-success" >Back</a>
-
-    
+    {{csrf_field()}}
+    </form>
     </div>
     
   </div>
 </div>
-
-
 @endsection
 
         </div>

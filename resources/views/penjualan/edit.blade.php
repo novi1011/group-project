@@ -9,38 +9,38 @@
                 <div class="card-header" center>FORM EDIT DATA BARANG</div><br>
 
                 <div class="card-body">
-                <form action="{{ route('update_FormFactory', $forms->id) }}" method="post">
+                <form action="{{ route('produk.update', $produks->id) }}" method="post">
                 {{csrf_field()}}
 
                         <div class="form-group row">
-                            <label for="title" class="col-md-4 col-form-label text-md-right">Product ID</label>
+                            <label for="Product_name" class="col-md-4 col-form-label text-md-right">Product ID</label>
 
                             <div class="col-md-6">
-                                <input type="increment" name="product-id" value="{{ $forms->product_id }}">
+                                <input type="text" name="Product_name" value="{{ $produks->Product_name }}">
                             </div>
 
                         </div>
                         <div class="form-group row">
-                            <label for="title" class="col-md-4 col-form-label text-md-right">Product Name</label>
+                            <label for="Supplier_id" class="col-md-4 col-form-label text-md-right">Supplier ID</label>
 
                             <div class="col-md-6">
-                                <input type="text" name="product_name" value="{{ $forms->product_name }}">
+                                <input type="text" name="Supplier_id" value="{{ $produks->Supplier_id}}">
                             </div>
                         </div>
  
                         <div class="form-group row">
-                            <label for="title" class="col-md-4 col-form-label text-md-right">Supplier_id</label>
+                            <label for="Unit_price" class="col-md-4 col-form-label text-md-right">Unit Price</label>
 
                             <div class="col-md-6">
-                                <input type="int" name="supplier_id" value="{{ $forms->supplier_id }}">
+                                <input type="text" name="Unit_price" value="{{ $Produks->Unit_price }}">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="title" class="col-md-4 col-form-label text-md-right">Unit_price</label>
+                            <label for="Quantity" class="col-md-4 col-form-label text-md-right">Quantity</label>
 
                             <div class="col-md-6">
-                                <input type="decimal" name="unit_price" value="{{ $forms->unit_price }}">
+                                <input type="text" name="Quantity" value="{{ $Produks->Quantity }}">
                             </div>
                         </div>
 
