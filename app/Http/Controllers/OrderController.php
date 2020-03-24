@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Produk;
+use App\Customer;
 
 class CustomerController extends Controller
 {
@@ -15,7 +14,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $produk=Produk::all();
+        $produk=Customer::all();
         return view('customer.index',compact('produk'));
     }
 
@@ -26,7 +25,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('forms.create');
     }
 
     /**
@@ -48,9 +47,7 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        $customers= Produk::find($id);
-        // return $produks;
-        return view('customer.show',compact('customers'));
+        //
     }
 
     /**
