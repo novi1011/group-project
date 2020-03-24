@@ -28,7 +28,7 @@
                                     <td>{{$item->created_at}}</td>
                                     <td>{{$item->updated_at}}</td>
                                     <td>   
-                                        <a href="#" class="btn btn-warning btn-sm">View</a>
+                                        <a href="#" class="btn btn-primary btn-sm">Beli</a>
                                             
                                     </td>
                                 </tr>
