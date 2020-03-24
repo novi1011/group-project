@@ -16,10 +16,8 @@
                             <label for="desc" class="col-md-4 col-form-label text-md-right">Desc</label>
 
                             <div class="col-md-6">
-                                <textarea name="desc" cols="50" rows="5"  value="{{ old('desc') }}"></textarea>
+                                <textarea name="desc" cols="50" rows="5"  value="#"></textarea>
 
-                                @if ($errors->has('desc'))
-                                        <strong>{{ $errors->first('desc') }}</strong>
-                                @endif
+                                
                             </div>
                         </div>
