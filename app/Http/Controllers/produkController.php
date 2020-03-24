@@ -45,10 +45,9 @@ class ProdukController extends Controller
             'Quantity'=> 'required|min:1',
         ]);
 
-
         Produk::create($request->all());
-        return redirect()->route('produk.index');
-        
+        return $produks;
+        // return redirect()->route('produk.index');   
     }
 
     /**
@@ -72,7 +71,7 @@ class ProdukController extends Controller
     public function edit($id)
     {
         $produk= Produk::find($id);
-        return view('produk.edit', ['produk'=> $produks]);
+        return view('penjualan.edit', ['produk'=> $produk]);
     }
 
     /**
@@ -84,7 +83,13 @@ class ProdukController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $produk= Produk::find($id);
+        $produk->Product_name = $request->Product_name;
+        $produk->Supplier_id = $request->Supplier_id;
+        $produk->Unit_price = $request->Unit_price;
+        $produk->Quantity= $request->Quantity;
+
+        return redirect()->route('produk.index');
     }
 
     /**

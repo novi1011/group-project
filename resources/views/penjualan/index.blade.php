@@ -12,7 +12,7 @@
 
                         <table class="table table-striped">
                             <tr>
-                                <th>Product ID</th>
+                                
                                 <th>Product Name</th>
                                 <th>Supplier ID</th>
                                 <th>Unit Price</th>
@@ -23,7 +23,7 @@
                             </tr>
                             @foreach($produk as $item)
                                 <tr>
-                                    <td>{{$item->Produk_id}}</td>
+                                    
                                     <td>{{$item->Product_name}}</td>
                                     <td>{{$item->Supplier_id}}</td>
                                     <td>{{$item->Unit_price}}</td>
@@ -31,8 +31,8 @@
                                     <td>{{$item->created_at}}</td>
                                     <td>{{$item->updated_at}}</td>
                                     <td>   
-                                        <a href="{{route ('produk.show', $item->Produk_id)}}" class="btn btn-warning btn-sm">View</a>
-                                        <a href="{{route ('produk.edit', $item->produks_id)}}" class="btn btn-primary btn-sm">Edit</a>
+                                        <a href="{{route ('produk.show', $item->id)}}" class="btn btn-warning btn-sm">View</a>
+                                        <a href="{{route ('produk.edit', $item->id)}}" class="btn btn-primary btn-sm">Edit</a>
                                         <a href="#" class="btn btn-danger btn-sm">Delete</a>
                                             
                                     </td>
