@@ -58,7 +58,7 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        $produk=Produk::find($id);  //masih error
+        $produk=Produk::find($id);  
         return view('penjualan/show', compact('produk'));
     }
 
@@ -88,8 +88,9 @@ class ProdukController extends Controller
         $produk->Supplier_id = $request->Supplier_id;
         $produk->Unit_price = $request->Unit_price;
         $produk->Quantity= $request->Quantity;
+        $produk->save();
 
-        return redirect()->route('produk.index');
+        return redirect()->route('produk.index')->with('success');
     }
 
     /**

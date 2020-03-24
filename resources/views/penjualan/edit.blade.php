@@ -9,7 +9,7 @@
                 <div class="card-header" center>FORM EDIT DATA BARANG</div><br>
 
                 <div class="card-body">
-                <form action="{{route('produk.update')}}" method="post">
+                <form action="{{route('produk.update', $produk->id)}}" method="post">
                 {{csrf_field()}}
 
                         <div class="form-group row">
