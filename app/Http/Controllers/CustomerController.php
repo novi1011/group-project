@@ -49,7 +49,7 @@ class CustomerController extends Controller
     public function show($id)
     {
         $customers= Produk::find($id);
-       
+        // return $produks;
         return view('customer.show',compact('customer'));
     }
 

@@ -44,7 +44,7 @@
                                     <td>{{$item->Unit_price}}</td>
                                     <td>{{$item->Quantity}}</td>
                                     <td>   
-                                        <a href="{{ route('customer.show',$item->Produk_id) }}" class="btn btn-primary btn-sm">Beli</a>
+                                        <a href="{{ route('customer.show',$item->id) }}" class="btn btn-primary btn-sm">Beli</a>
                                         {{csrf_field()}}
                                     </td>
                                 </tr>

@@ -30,6 +30,23 @@
 
     <div class="row text-center">
         <div class="col-sm-12">
+            <h3><b>Supplier_id</b></h3>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-sm-4">
+            <hr>
+        </div>
+        <div class="col-sm-4">
+            {{$customers->Supplier_name}}
+        </div>
+        <div class="col-sm-4">
+            <hr>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-sm-12">
             <h3><b>Unit Price</b></h3>
         </div>
     </div>
