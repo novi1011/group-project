@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Produk;
 
-class ProdukController extends Controller
+class CustomerController extends Controller
 {
-    
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +15,8 @@ class ProdukController extends Controller
      */
     public function index()
     {
-      $produk=Produk::all();
-      return view('penjualan.index',compact('produk'));
-    
+        $produk=Produk::all();
+        return view('customer.index',compact('produk'));
     }
 
     /**
@@ -27,7 +26,7 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        return view('penjualan/create');
+        //
     }
 
     /**
@@ -60,7 +59,7 @@ class ProdukController extends Controller
      */
     public function edit($id)
     {
-        
+        //
     }
 
     /**
