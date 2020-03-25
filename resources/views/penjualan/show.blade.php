@@ -31,7 +31,7 @@
 
     <div class="row text-center">
         <div class="col-sm-12">
-            <h3><b>Supplier_id</b></h3>
+            <h3><b>Supplier Id</b></h3>
         </div>
     </div>
     <div class="row text-center">
@@ -39,7 +39,7 @@
             <hr>
         </div>
         <div class="col-sm-4">
-            {{$customers->Supplier_name}}
+            {{$produk->Supplier_name}}
         </div>
         <div class="col-sm-4">
             <hr>
@@ -56,7 +56,7 @@
             <hr>
         </div>
         <div class="col-sm-4">
-            {{$customers->Unit_price}}
+            {{$produk->Unit_price}}
         </div>
         <div class="col-sm-4">
             <hr>
@@ -73,7 +73,7 @@
             <hr>
         </div>
         <div class="col-sm-4">
-            {{$customers->Quantity}}
+            {{$produk->Quantity}}
         </div>
         <div class="col-sm-4">
             <hr>
@@ -83,7 +83,7 @@
     <hr>
     <div class="col text-center">
         <div class="col-sm-12">
-         <a class="btn btn-primary" href="{{ route('customer.index') }}"> Back</a>
+         <a class="btn btn-primary" href="{{ route('produk.index') }}"> Back</a>
         </div>
     </div>
 </div>
