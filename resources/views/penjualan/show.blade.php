@@ -4,6 +4,8 @@
     <div class="row text-center">
         <div class="col-sm-12">
             <hr>
+                <h3>Keterangan Produk</h3>
+            <hr>
             <p>{{$produk->Product_name}}</p>
             <p>{{$produk->Supplier_id}}</p>
             <p>{{$produk->Unit_price}}</p>

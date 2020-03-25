@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Produk;
+use DB;
 
 class ProdukController extends Controller
 {
@@ -13,10 +14,14 @@ class ProdukController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-      $produk=Produk::all();
-      return view('penjualan.index',compact('produk'));
+        $produk= Produk::where('Product_name', 'like', "%{$request->get('cari')}%")
+        ->orWhere('Supplier_id','like',"%{$request->get('cari')}%")
+        ->orderBy('id','DESC')
+        ->paginate(4);
+
+    return view('penjualan/index',compact('produk'));
     
     }
 
@@ -64,8 +69,8 @@ class ProdukController extends Controller
      */
     public function edit($id)
     {
-        $produk= Produk::find($id);
-        return view('penjualan.edit', ['produk'=> $produk]);
+        $produk=Produk::findOrFail($id);
+        return view('penjualan.edit',compact('produk'));
     }
 
     /**
@@ -77,12 +82,8 @@ class ProdukController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $produk= Produk::find($id);
-        $produk->Product_name = $request->Product_name;
-        $produk->Supplier_id = $request->Supplier_id;
-        $produk->Unit_price = $request->Unit_price;
-        $produk->Quantity= $request->Quantity;
-
+        $produk=Produk::findOrFail($id);
+        $produk->update($request->all());
         return redirect()->route('produk.index');
     }
 
@@ -94,6 +95,17 @@ class ProdukController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $produk=Produk::findOrFail($id);
+        $produk->delete();
+        return redirect()->route('produk.index');
+    }
+
+    public function deleteAll(Request $request)
+    {
+        $ids = $request->ids;
+        DB::table("produks")->whereIn('id',explode(",",$ids))->delete();
+        return response()->json(['success'=>"Products Deleted successfully."]);
+        return view('penjualan/index',compact('produk'));
+
     }
 }
