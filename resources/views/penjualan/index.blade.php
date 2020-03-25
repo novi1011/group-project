@@ -14,6 +14,7 @@
                     <a style="margin-left:20px;" href="{{route ('produk.create')}}" class="btn btn-primary btn-sm">Add New</a>
                     <button  class="btn btn-danger delete_all btn-sm" data-url="{{ url('myproductsDeleteAll') }}">Delete All Selected</button>
                     <a class="btn btn-primary btn-sm" style="margin-left:20px;" href="{{ route('produk.index') }}">Refresh</a>
+                    <a class="btn btn-primary btn-sm" style="margin-left:20px;" href="{{ route('home_supplier') }}">Dashboard</a>
                 <div class="panel-body">
 
                 <form method="get" action="">
