@@ -12,14 +12,13 @@
 
                         <table class="table table-striped">
                             <tr>
-                                
                                 <th>Product Name</th>
                                 <th>Supplier ID</th>
                                 <th>Unit Price</th>
                                 <th>Quantity</th>
-                                <th>Ceated_AT</th>
+                                <th>Ceated_at</th>
                                 <th>Updated_at</th>
-                                <th colspan="3">action</th>
+                                <th colspan="4">Actions</th>
                             </tr>
                             @foreach($produk as $item)
                                 <tr>
@@ -31,10 +30,9 @@
                                     <td>{{$item->created_at}}</td>
                                     <td>{{$item->updated_at}}</td>
                                     <td>   
-                                        <a href="{{route ('produk.show', $item->id)}}" class="btn btn-warning btn-sm">View</a>
-                                        <a href="{{route ('produk.edit', $item->id)}}" class="btn btn-primary btn-sm">Edit</a>
-                                        <a href="#" class="btn btn-danger btn-sm">Delete</a>
-                                            
+                                        <a href="{{route ('produk.show', $item->id)}}" style="width:100px;" class="btn btn-warning btn-sm">View</a>
+                                        <a href="{{route ('produk.edit', $item->id)}}" style="width:100px; margin-top:10px;" class="btn btn-primary btn-sm">Edit</a>
+                                        <a href="#" style="width:100px; margin-top:10px;" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach
