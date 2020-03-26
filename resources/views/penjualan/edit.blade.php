@@ -1,66 +1,86 @@
 @extends('layouts.app')
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-            
-                <div class="card-header" center>FORM EDIT DATA BARANG</div><br>
 
-                <div class="card-body">
-                <form action="{{route('produk.update', $produk->id)}}" method="post">
-                {{csrf_field()}}
-
-                        <div class="form-group row">
-                            <label for="Product_name" class="col-md-4 col-form-label text-md-right">Product Name</label>
-
-                            <div class="col-md-6">
-                                <input type="text" name="Product_name" value="{{ $produk->Product_name }}">
-                            </div>
-
-                        </div>
-                        <div class="form-group row">
-                            <label for="Supplier_id" class="col-md-4 col-form-label text-md-right">Supplier ID</label>
-
-                            <div class="col-md-6">
-                                <input type="text" name="Supplier_id" value="{{ $produk->Supplier_id}}">
-                            </div>
-                        </div>
- 
-                        <div class="form-group row">
-                            <label for="Unit_price" class="col-md-4 col-form-label text-md-right">Unit Price</label>
-
-                            <div class="col-md-6">
-                                <input type="text" name="Unit_price" value="{{ $produk->Unit_price }}">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="Quantity" class="col-md-4 col-form-label text-md-right">Quantity</label>
-
-                            <div class="col-md-6">
-                                <input type="text" name="Quantity" value="{{ $produk->Quantity }}">
-                            </div>
-                        </div>
-
-                        
-                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-6">
-                            
-                                <button type="submit" class="btn btn-warning">
-                                    {{ __('Edit') }}
-                                </button>
-                               
-                                {{csrf_field()}}
-                                <input type="hidden" name="_method" value="PUT">
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <h3>EDIT DATA PRODUK</h3>
             </div>
         </div>
+
+        <hr>
+        <div class="card-body">
+            <form method="POST" action="{{ route('produk.update',$produk['id']) }}">
+               {{csrf_field()}}
+               {{method_field('PUT')}}
+                <div class="row">
+                    <div class="col-sm-4">
+                        <p></p>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="Product_name">Product_name</label>
+                            <input id="Product_name" type="text" placeholder="Masukan Product_name" class="form-control{{ $errors->has('Product_name') ? ' is-invalid' : '' }}" name="Product_name" value="{{$produk['Product_name']}}" required autofocus>
+                                @if ($errors->has('Product_name'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('Product_name') }}</strong>
+                                        </span>
+                                @endif
+                        </div>
+                            
+                        <div class="form-group">
+                            <label for="Supplier_ID">Supplier ID</label>
+                            <input id="Supplier_id" type="text" placeholder="Masukan Supplier ID" class="form-control{{ $errors->has('Supplier_id') ? ' is-invalid' : '' }}" name="Supplier_id" value="{{$produk['Supplier_id']}}" required>
+                            @if ($errors->has('Supplier_ID'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('Supplier_id') }}</strong>
+                                        </span>
+                                @endif
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Unit_price">Unit_price</label>
+                            <input id="Unit_price" type="text" placeholder="Masukan Unit Price" class="form-control{{ $errors->has('Unit_price') ? ' is-invalid' : '' }}" name="Unit_price" value="{{$produk['Unit_price']}}" required>
+                            @if ($errors->has('Unit_price'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('Unit_price') }}</strong>
+                                        </span>
+                                @endif
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Quantity">Quantity</label>
+                            <input id="Quantity" type="text" placeholder="Masukan Quantity" class="form-control{{ $errors->has('Quantity') ? ' is-invalid' : '' }}" name="Quantity" value="{{$produk['Quantity']}}" required>
+                            @if ($errors->has('Quantity'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('Quantity') }}</strong>
+                                        </span>
+                                @endif
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                            {{ __('UPDATE') }}
+                            </button>
+                            <a href="{{ route('produk.index') }}" class="btn btn-danger btn-sm">Back</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <p></p>
+                    </div>
+                </div>
+                @if (session('pesan'))
+                    <div class="alert alert-info alert-close">
+                        {{session('pesan')}}
+                    </div>
+                @endif
+            </form>
+        <hr>
     </div>
-</div>
 @endsection
