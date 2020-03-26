@@ -57,7 +57,7 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        $produk=Produk::find($id);  //masih error
+        $produk=Produk::find($id);  
         return view('penjualan/show', compact('produk'));
     }
 
@@ -82,9 +82,11 @@ class ProdukController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $produk=Produk::findOrFail($id);
         $produk->update($request->all());
         return redirect()->route('produk.index');
+
     }
 
     /**

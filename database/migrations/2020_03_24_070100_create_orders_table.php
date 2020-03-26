@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->string('Product_name');
             $table->decimal('Unit_price');
-            $table->integer('Quantity');
+            $table->integer('Total');
             $table->decimal('Total_amount');
             $table->timestamps();
         });

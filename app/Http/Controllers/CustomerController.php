@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Produk;
+use App\Order;
 
 class CustomerController extends Controller
 {
@@ -15,8 +16,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $produk=Produk::all();
-        return view('customer.index',compact('produk'));
+        $customer=Produk::all();
+        return view('customer.index',compact('customer'));
     }
 
     /**
@@ -26,7 +27,28 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        $getRow = Order::orderBy('id', 'DESC')->get();
+        $rowCount = $getRow->count();
+        
+        $lastId = $getRow->first();
+
+        $kode = "00001";
+        
+        if ($rowCount > 0) {
+            if ($lastId->id < 9) {
+                    $kode = "0000".''.($lastId->id + 1);
+            } else if ($lastId->id < 99) {
+                    $kode = "000".''.($lastId->id + 1);
+            } else if ($lastId->id < 999) {
+                    $kode = "00".''.($lastId->id + 1);
+            } else {
+                    $kode = "0".''.($lastId->id + 1);
+            } 
+        }
+
+        $order = Order::where('jumbel', '>', 0)->get();
+        $produk = Customer::get();
+        return view('penjualan.index', compact('produks'));
     }
 
     /**
@@ -37,7 +59,25 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $order=Order::create($request->all());
+        return redirect()->route('customer.index');
+
+        $transaksi = Produk::create([
+            'Product_name' => $request->get('Product_name'),
+            'Supplier_id' => $request->get('Supplier_id'),
+            'Unit_price' => $request->get('Unit_price'),
+            'Quantity' => $request->get('Quantity'),
+            
+        ]);
+
+        $transaksi->produk->where('id', $transaksi->id)
+                    ->update([
+                        'jumbel' => ($transaksi->order->jumbel - 1),
+                        ]);
+
+    alert()->success('Berhasil.','Data telah ditambahkan!');
+    return redirect()->route('penjuala.index');
+
     }
 
     /**
@@ -48,9 +88,9 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        $customers= Produk::find($id);
+        $customer= Produk::find($id);
         // return $produks;
-        return view('customer.show',compact('customers'));
+        return view('customer.show',compact('customer'));
     }
 
     /**
@@ -61,7 +101,8 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $customer=Produk::findOrFail($id);
+        return view('customer.show',compact('customer'));
     }
 
     /**
@@ -73,7 +114,9 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $customer=Produk::findOrFail($id);
+        $customer->update($request->all());
+        return redirect()->route('customer.index');
     }
 
     /**
