@@ -36,7 +36,7 @@
                                 <th>Quantity</th>
                                 <th colspan="3">actions</th>
                             </tr>
-                            @foreach($produk as $item)
+                            @foreach($customer as $item)
                                 <tr>
                                     
                                     <td>{{$item->Product_name}}</td>

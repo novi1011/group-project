@@ -15,8 +15,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $produk=Produk::all();
-        return view('customer.index',compact('produk'));
+        $customer=Produk::all();
+        return view('customer.index',compact('customer'));
     }
 
     /**
@@ -48,9 +48,9 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        $customers= Produk::find($id);
+        $customer= Produk::find($id);
         // return $produks;
-        return view('customer.show',compact('customers'));
+        return view('customer.show',compact('customer'));
     }
 
     /**
@@ -61,7 +61,8 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $customer=Produk::findOrFail($id);
+        return view('customer.show',compact('customer'));
     }
 
     /**
@@ -73,7 +74,9 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $customer=Produk::findOrFail($id);
+        $customer->update($request->all());
+        return redirect()->route('customer.index');
     }
 
     /**
