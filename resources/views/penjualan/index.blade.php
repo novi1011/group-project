@@ -35,7 +35,7 @@
                     </div>
                 </form>
 
-                        <table class="table table-striped">
+                        <table class="table table-striped" style="width:100%;">
                             <tr>
                                 <th width="50px"><input type="checkbox" id="master"></th>
                                 <th>Product Name</th>
