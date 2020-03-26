@@ -18,7 +18,7 @@
                {{method_field('PUT')}}
                 <div class="row">
 
-                    <div class="col-sm-3">
+                    <div class="col-sm-3" class="perhitungan">
                             <label for="Product_name">Product_name</label>
                             <input id="Product_name" type="text" placeholder="Masukan Product_name" class="form-control{{ $errors->has('Product_name') ? ' is-invalid' : '' }}" name="Product_name" value="{{$customer['Product_name']}}" readonly >
                                 @if ($errors->has('Product_name'))
@@ -66,16 +66,47 @@
                                 @endif
                                     
                         <hr>
-                                
                                     <div class="col-sm-3">
-                                        <input id="jumbel" class="form-control" type="text" placeholder="Masukan Jumlah Beli" required autofocus>
+                                        <input id="jumbel" class="form-control" onChange = "jumlahkan(); jumlahkan2();" value="1" min="1" type="number"  placeholder="Masukan Jumlah Beli" required autofocus>
                                             <br>
-                                        <input id="total" class="form-control" type="text" placeholder="Total Amount" readonly>
+                                         
+                                      
+                                        <input id="Total_amount" class="form-control" type="text" name="Total_amount" readonly>
+                                    
                                     </div>
-                                
+
+                                    <script type="text/javascript">
+                                                function jumlahkan2(){
+                                                    var a1 = document.getElementById('Quantity').value;
+                                                    var a2 = document.getElementById('jumbel').value;
+                                                    
+                                                    var total = a1-a2;
+                                                    console.log(total);
+                                                    // var hasil= document.getElementById("Total_amount");
+                                                    // hasil.innerHTML = total;
+                                                    document.getElementById('Quantity').value=total;
+                                                    // alert(total);
+                                                }
+                                     
+                                     </script>
+                                    <script type="text/javascript">
+                                                function jumlahkan(){
+                                                    var a1 = document.getElementById('Unit_price').value;
+                                                    var a2 = document.getElementById('jumbel').value;
+                                                    
+                                                    var total = a1*a2;
+                                                    console.log(total);
+                                                    // var hasil= document.getElementById("Total_amount");
+                                                    // hasil.innerHTML = total;
+                                                    document.getElementById('Total_amount').value=total;
+                                                    // alert(total);
+                                                }
+                                     
+                                     </script>
+                                     
                                 <hr>
                                     <div class="col-sm-3">
-                                        <button style="width:75%;" type="button" class="btn btn-primary">Order</button>
+                                        <a href="{{'customer.indexorder'}}" style="width:75%;"  class="btn btn-primary">Order</a>
                                     </div>
                 </div>
                 
