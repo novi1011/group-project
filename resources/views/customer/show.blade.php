@@ -57,15 +57,31 @@
                                         </span>
                                 @endif
                     </div>
+                
+                
+                                @if (session('pesan'))
+                                    <div class="alert alert-info alert-close">
+                                        {{session('pesan')}}
+                                    </div>
+                                @endif
+                                    
+                        <hr>
+                                
+                                    <div class="col-sm-3">
+                                        <input id="jumbel" class="form-control" type="text" placeholder="Masukan Jumlah Beli" required autofocus>
+                                            <br>
+                                        <input id="total" class="form-control" type="text" placeholder="Total Amount" readonly>
+                                    </div>
+                                
+                                <hr>
+                                    <div class="col-sm-3">
+                                        <button style="width:75%;" type="button" class="btn btn-primary">Order</button>
+                                    </div>
                 </div>
                 
-                @if (session('pesan'))
-                    <div class="alert alert-info alert-close">
-                        {{session('pesan')}}
-                    </div>
-                @endif
             </form>
-          <hr>
         </div>
     </div>
+
+
 @endsection
