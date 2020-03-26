@@ -20,7 +20,7 @@
 
                     <div class="col-sm-3">
                             <label for="Product_name">Product_name</label>
-                            <input id="Product_name" type="text" placeholder="Masukan Product_name" class="form-control{{ $errors->has('Product_name') ? ' is-invalid' : '' }}" name="Product_name" value="{{$customer['Product_name']}}" required autofocus>
+                            <input id="Product_name" type="text" placeholder="Masukan Product_name" class="form-control{{ $errors->has('Product_name') ? ' is-invalid' : '' }}" name="Product_name" value="{{$customer['Product_name']}}" readonly >
                                 @if ($errors->has('Product_name'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('Product_name') }}</strong>
@@ -30,7 +30,7 @@
                             
                     <div class="col-sm-3">
                             <label for="Supplier_ID">Supplier ID</label>
-                            <input id="Supplier_id" type="text" placeholder="Masukan Supplier ID" class="form-control{{ $errors->has('Supplier_id') ? ' is-invalid' : '' }}" name="Supplier_id" value="{{$customer['Supplier_id']}}" required>
+                            <input id="Supplier_id" type="text" placeholder="Masukan Supplier ID" class="form-control{{ $errors->has('Supplier_id') ? ' is-invalid' : '' }}" name="Supplier_id" value="{{$customer['Supplier_id']}}" readonly >
                             @if ($errors->has('Supplier_ID'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('Supplier_id') }}</strong>
@@ -40,7 +40,7 @@
 
                     <div class="col-sm-3">
                             <label for="Unit_price">Unit_price</label>
-                            <input id="Unit_price" type="text" placeholder="Masukan Unit Price" class="form-control{{ $errors->has('Unit_price') ? ' is-invalid' : '' }}" name="Unit_price" value="{{$customer['Unit_price']}}" required>
+                            <input id="Unit_price" type="text" placeholder="Masukan Unit Price" class="form-control{{ $errors->has('Unit_price') ? ' is-invalid' : '' }}" name="Unit_price" value="{{$customer['Unit_price']}}" readonly>
                             @if ($errors->has('Unit_price'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('Unit_price') }}</strong>
@@ -50,7 +50,7 @@
 
                     <div class="col-sm-3">
                             <label for="Quantity">Quantity</label>
-                            <input id="Quantity" type="text" placeholder="Masukan Quantity" class="form-control{{ $errors->has('Quantity') ? ' is-invalid' : '' }}" name="Quantity" value="{{$customer['Quantity']}}" required>
+                            <input id="Quantity" type="text" placeholder="Masukan Quantity" class="form-control{{ $errors->has('Quantity') ? ' is-invalid' : '' }}" name="Quantity" value="{{$customer['Quantity']}}" readonly>
                             @if ($errors->has('Quantity'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('Quantity') }}</strong>
