@@ -67,11 +67,15 @@
                                     
                         <hr>
                                     <div class="col-sm-3" style="margin-top:20px;">
-                                        <input id="jumbel" class="form-control" onChange = "jumlahkan(); jumlahkan2();"  placeholder="Masukan Jumlah Beli" required autofocus>
+                                        <input id="jumbel" name="jumbel" class="form-control" onChange = "jumlahkan(); jumlahkan2();"  placeholder="Masukan Jumlah Beli" required autofocus>
                                             <br>
                                          
                                       
                                         <input id="Total_amount" class="form-control" type="text" name="Total_amount" readonly>
+
+                                        <hr>
+
+                                        <input id="anggota" class="form-control" type="text" name="user" value="{{ Auth::user()->name }}" readonly>
                                     
                                     </div>
 
@@ -105,9 +109,12 @@
                                      </script>
                     </div> 
                                 <hr>
-                                    <div class="col-sm-3">
-                                        <input type="submit" value="Order" style="width:75%;"  class="btn btn-primary">
-                                    </div>
+                                <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                            {{ __('Klik Atau Tekan Enter') }}
+                            </button>
+                            
+                        </div>
                
                 
             </form>

@@ -28,28 +28,28 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        $getRow = Order::orderBy('id', 'DESC')->get();
-        $rowCount = $getRow->count();
+    //     $getRow = Order::orderBy('id', 'DESC')->get();
+    //     $rowCount = $getRow->count();
         
-        $lastId = $getRow->first();
+    //     $lastId = $getRow->first();
 
-        $kode = "00001";
+    //     $kode = "00001";
         
-        if ($rowCount > 0) {
-            if ($lastId->id < 9) {
-                    $kode = "0000".''.($lastId->id + 1);
-            } else if ($lastId->id < 99) {
-                    $kode = "000".''.($lastId->id + 1);
-            } else if ($lastId->id < 999) {
-                    $kode = "00".''.($lastId->id + 1);
-            } else {
-                    $kode = "0".''.($lastId->id + 1);
-            } 
-        }
+    //     if ($rowCount > 0) {
+    //         if ($lastId->id < 9) {
+    //                 $kode = "0000".''.($lastId->id + 1);
+    //         } else if ($lastId->id < 99) {
+    //                 $kode = "000".''.($lastId->id + 1);
+    //         } else if ($lastId->id < 999) {
+    //                 $kode = "00".''.($lastId->id + 1);
+    //         } else {
+    //                 $kode = "0".''.($lastId->id + 1);
+    //         } 
+    //     }
 
-        $order = Order::where('jumbel', '>', 0)->get();
-        $produk = Customer::get();
-        return view('penjualan.index', compact('produks'));
+    //     $order = Order::where('jumbel', '>', 0)->get();
+    //     $produk = Customer::get();
+    //     return view('penjualan.index', compact('produks'));
     }
 
     /**
@@ -60,24 +60,12 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $order=Order::create($request->all());
-        return redirect()->route('customer.index');
-
-        $transaksi = Produk::create([
-            'Product_name' => $request->get('Product_name'),
-            'Supplier_id' => $request->get('Supplier_id'),
-            'Unit_price' => $request->get('Unit_price'),
-            'Quantity' => $request->get('Quantity'),
-            
+        DB::table('Orders')->insert([
+            'Product_name' => $request->nama,
+            'Unit_price' => $request->jabatan,
+            'Total' => $request->umur,
+            'Total_amount' => $request->alamat
         ]);
-
-        $transaksi->produk->where('id', $transaksi->id)
-                    ->update([
-                        'jumbel' => ($transaksi->order->jumbel - 1),
-                        ]);
-
-    alert()->success('Berhasil.','Data telah ditambahkan!');
-    return redirect()->route('penjuala.index');
 
     }
 
@@ -115,9 +103,21 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $customer=Produk::findOrFail($id);
-        $customer->update($request->all());
+        $customer=Produk::find($id);
+        $customer->Quantity=$request->Quantity;
         $customer->save();
+
+        $customer=new Order;
+        $customer->nama_customer=$request->user;
+        $customer->Product_name=$request->Product_name;
+        $customer->Unit_price=$request->Unit_price;
+        $customer->Total=$request->jumbel;
+        $customer->Total_amount=$request->Total_amount;
+        $customer->save();
+
+        return view('customer.order',compact('customer'));
+
+        
         
     }
 
