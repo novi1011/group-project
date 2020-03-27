@@ -106,7 +106,7 @@
                                      
                                 <hr>
                                     <div class="col-sm-3">
-                                        <a href="{{'customer.indexorder'}}" style="width:75%;"  class="btn btn-primary">Order</a>
+                                        <input name="simpan" type="submit" value="Order"style="width:75%;"  class="btn btn-primary">
                                     </div>
                 </div>
                 
