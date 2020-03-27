@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Produk;
 use App\Order;
+use DB;
 
 class CustomerController extends Controller
 {
@@ -116,7 +117,8 @@ class CustomerController extends Controller
     {
         $customer=Produk::findOrFail($id);
         $customer->update($request->all());
-        return redirect()->route('customer.index');
+        $customer->save();
+        
     }
 
     /**

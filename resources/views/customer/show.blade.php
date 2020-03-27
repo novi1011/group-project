@@ -106,7 +106,7 @@
                     </div> 
                                 <hr>
                                     <div class="col-sm-3">
-                                        <input name="simpan" type="submit" value="Order"style="width:75%;"  class="btn btn-primary">
+                                        <input type="submit" value="Order" style="width:75%;"  class="btn btn-primary">
                                     </div>
                
                 
