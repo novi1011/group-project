@@ -66,8 +66,8 @@
                                 @endif
                                     
                         <hr>
-                                    <div class="col-sm-3">
-                                        <input id="jumbel" class="form-control" onChange = "jumlahkan(); jumlahkan2();" value="1" min="1" type="number"  placeholder="Masukan Jumlah Beli" required autofocus>
+                                    <div class="col-sm-3" style="margin-top:20px;">
+                                        <input id="jumbel" class="form-control" onChange = "jumlahkan(); jumlahkan2();"  placeholder="Masukan Jumlah Beli" required autofocus>
                                             <br>
                                          
                                       
@@ -103,12 +103,12 @@
                                                 }
                                      
                                      </script>
-                                     
+                    </div> 
                                 <hr>
                                     <div class="col-sm-3">
                                         <a href="{{'customer.indexorder'}}" style="width:75%;"  class="btn btn-primary">Order</a>
                                     </div>
-                </div>
+               
                 
             </form>
         </div>
