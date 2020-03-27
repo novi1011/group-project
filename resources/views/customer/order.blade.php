@@ -1,47 +1,37 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-4">
-            <div class="card bg-light mb-3" style="max-width: 30rem;">
-                <div class="panel-heading"><h2>Form INPUT ORDER ITEM</h2></div><br>
-                    <div class="card-body">
+    <div class="row text-center">
+        <div class="container-fluid">
+             <div class="row">
+                <div class="col-sm-6 col-sm-offset-2">
 
-  <form method="POST" action="#">
-<form>
-    <div class="form-group">
-        <label for="Product_name">Produc Name</label>
-        <input type="text" name="product_name" value="{{ $forms->product_name }}">
-    </div>
-    <div class="form-group">
-        <label for="Supplier_id">Unit price</label>
-        <input type="decimal" name="unit_price" value="{{ $forms->unit_price }}">
-    </div>
-    <div class="form-group">
-        <label for="quantity">Quantity</label>
-        <input type="integer" class="form-control" id="quantity" placeholder="Masukkan satuan" name="quantity">
-    </div>
-    <div class="form-group">
-        <label for="quantity">Total Amount</label>
-        <input type="decimal" class="form-control" id="quantity" placeholder="Masukkan satuan" name="quantity">
-    </div>
-
-</form>
-    <div class="col-md-10 offset-md-2">
-        <button type="submit" class="btn btn-primary">{{__('Save')}} </button>
-        <a href="{{route ('produk.index')}}" class="btn btn-success" >Back</a>
-
-    
-    </div>
-    
-  </div>
-</div>
-
-
-@endsection
-
+        <h3>Keterangan Order</h3><b>
+        <br>
+        
+        <table class="table table-bordered text-center">
+            <thead class="thead-light ">
+                <tr>
+                <th scope="col">Product Name</th>
+                <th scope="col">Unite Price</th>
+                <th scope="col">Jumlah Beli</th>
+                <th scope="col">Total Bayar</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                <tr>
+                <td>{{$customer->Product_name}}</td>
+                <td>{{$customer->Unit_price}}</td>
+                <td>{{$customer->Total}}</td>
+                <td>{{$customer->Total_amount}}</td>
+                </tr>
+            </tbody>
+            </table>
+                <br>
+                <a href="{{ route('customer.index') }}" class="btn btn-danger btn-sm" style="width:150px;">Back</a>
+                    
         </div>
     </div>
-</div>
-
+       
+@endsection
