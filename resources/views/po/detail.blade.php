@@ -132,7 +132,7 @@
                         </table>
                         <div>
                             @if($dt->status !=2)
-                            <button type= "submit" class="btn btn-block btn-primary">Simpan PO</button>
+                            <button type= "submit" class="btn btn-block btn-primary">Tekan disini ( don't enter! )</button>
                             @endif
                         </div>
                         </form>
