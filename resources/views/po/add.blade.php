@@ -71,7 +71,7 @@
                                             <td>{{number_format($pd->buy,0)}}</td>
                                             <td>
                                                 <input type="hidden" name="produk[]" value="{{ $pd->id }}">
-                                                <input type="number" value="0" class="form-control" name="qty[]" requred>
+                                                <input type="number" value="1" min="1" class="form-control" name="qty[]" requred>
                                             </td>
                                         </tr>
                                         @endforeach
