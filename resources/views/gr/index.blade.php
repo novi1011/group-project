@@ -16,6 +16,7 @@
                     <table class="table table-striped myTable">
                         <thead>
                             <tr>
+                                <th>Detail</th>
                                 <th>#</th>
                                 <th>Document_no</th>
                                 <td>Total_Item</td>
@@ -27,6 +28,9 @@
                         <tbody>
                             @foreach($data as $e=>$dt)
                                 <tr>
+                                    <td> <a href="{{ url('gr/' .$dt->id) }}" class="btn btn-xs btn-primary">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
                                     <td>{{$e+1}}</td>
                                     <td>{{$dt->document_no}}</td>
                                     <td>{{$dt->total_item()}}</td>
