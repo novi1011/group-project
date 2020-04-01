@@ -54,6 +54,9 @@
                     <hr>
                 <div class="row">
                     <div class="col-md-12">
+                    <form method="post" action="{{url ('po/'.$dt->id) }}">
+                        {{ csrf_field() }}
+                        {{ method_field('PUT') }}
                         <table class="table table-hover myTable">
                             <thead>
                                 <tr>
@@ -82,7 +85,12 @@
 
                                 <tr>
                                     <td>{{$ln->produks->nama}}</td>
-                                    <td>{{$ln->qty}}</td>
+                                    <td>
+                                        <input type="number" name="qty[]" class="form-control" value="{{ $ln->qty}}" >
+                                        <input type="hidden" name="id_line[]" value="{{$ln->id}}" >
+                                        <input type="hidden" name="buy[]" value="{{$ln->buy}}" >
+
+                                    </td>
                                     <td>
                                         Rp. {{number_format($ln->buy,0)}}
                                     </td>
@@ -114,6 +122,10 @@
                                 </tr>
                             </tfoot>
                         </table>
+                        <div>
+                            <button type= "submit" class="btn btn-block btn-primary">Simpan PO</button>
+                        </div>
+                        </form>
                     </div>
                 </div>
                

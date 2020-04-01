@@ -103,6 +103,27 @@ class Po_controller extends Controller
         return view('po.detail',compact('title','dt'));
     }
 
+    public function update(Request $request, $id){
+        try{
+            $qty = $request->qty;
+            $id_line = $request->id_line;
+            $buy = $request->buy;
+
+            foreach ($qty as $e => $dt){
+                $data['qty'] = $dt;
+                $data['grand_total'] = $dt*$buy[$e];
+                $line = $id_line[$e];
+
+                Purchase_order_line::where('id', $line)->update($data);
+            }
+
+            \Session::flash('Sukses', 'Data berhasil disimpan');
+        } catch (\Exception $e) {
+            \Session::flash('gagal', $e->getMessage());
+        }
+        return redirect()->back();
+    }
+
     public function hapus_line($id){
         try {
             Purchase_order_line::where('id',$id)->delete();

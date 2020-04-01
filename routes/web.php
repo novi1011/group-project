@@ -54,6 +54,7 @@ Route::group(['middleware'=>'auth'], function(){
     Route::post('po/add','Po_controller@store');
     Route::get('po/approved/{id}','Po_controller@approved');
     Route::get('po/{id}','Po_controller@detail');
+    Route::put('po/{id}','Po_controller@update');
     Route::delete('po/line/{id}','Po_controller@hapus_line');
     // Route::delete('po/hapus/{id}','Po_controller@hapus');
 });
