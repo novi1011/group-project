@@ -9,6 +9,9 @@ use App\Models\M_produk;
 use App\Models\Purchase_order;
 use App\Models\Purchase_order_line;
 
+use App\Models\Goods_receipt;
+
+
 
 class Po_controller extends Controller
 {
@@ -84,8 +87,21 @@ class Po_controller extends Controller
 
     public function approved($id){
         try {
+
+            $po = Purchase_order::findOrFail($id);
             Purchase_order::where('id',$id)->update([
                 'status'=>2
+            ]);
+
+            Goods_receipt::where('purchase_order',$id)->delete();
+
+            Goods_receipt::insert([
+                'purchase_order'=>$id,
+                'document_no'=>'GR-'.rand(),
+                'status'=>1,
+                'created_at'=>date('Y-m-d H:i:s'),
+                'created_at'=>date('Y-m-d H:i:s')
+
             ]);
 
             \Session::flash('sukses','PO Berhasil Di Approved');

@@ -57,6 +57,9 @@ Route::group(['middleware'=>'auth'], function(){
     Route::put('po/{id}','Po_controller@update');
     Route::delete('po/line/{id}','Po_controller@hapus_line');
     // Route::delete('po/hapus/{id}','Po_controller@hapus');
+
+    //GM_by Aditya_Oktaviana
+    Route::get('gr','Gr_controller@index');
 });
 
 Auth::routes();

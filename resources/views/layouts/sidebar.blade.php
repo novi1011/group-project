@@ -14,6 +14,8 @@
 
         <li class="menu-sidebar"><a href="{{ url('/po/') }}"><span class="fa fa-shopping-cart"></span> Pesan produk</span></a></li>
 
+        <li class="menu-sidebar"><a href="{{ url('/gr/') }}"><span class="fa fa-check-square-o"></span> Goods Receipt</span></a></li>
+
         <li class="menu-sidebar"><a href="{{ url('/keluar') }}"><span class="glyphicon glyphicon-log-out"></span> Logout</span></a></li>
 
 
