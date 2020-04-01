@@ -117,7 +117,7 @@ class Po_controller extends Controller
                 Purchase_order_line::where('id', $line)->update($data);
             }
 
-            \Session::flash('Sukses', 'Data berhasil disimpan');
+            \Session::flash('sukses', 'Data berhasil disimpan');
         } catch (\Exception $e) {
             \Session::flash('gagal', $e->getMessage());
         }
