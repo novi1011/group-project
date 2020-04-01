@@ -108,13 +108,20 @@ class Po_controller extends Controller
             $qty = $request->qty;
             $id_line = $request->id_line;
             $buy = $request->buy;
-
+            $produk = $request->produk;
             foreach ($qty as $e => $dt){
                 $data['qty'] = $dt;
                 $data['grand_total'] = $dt*$buy[$e];
+                $data['buy'] = $buy[$e];
                 $line = $id_line[$e];
 
                 Purchase_order_line::where('id', $line)->update($data);
+                M_produk::where('id', $produk[$e])->update([
+                    'buy'=>$data['buy']
+                ]);
+
+
+
             }
 
             \Session::flash('sukses', 'Data berhasil disimpan');

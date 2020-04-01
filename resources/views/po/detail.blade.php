@@ -85,15 +85,23 @@
 
                                 <tr>
                                     <td>{{$ln->produks->nama}}</td>
+                                    @if($dt->status !=2)
                                     <td>
                                         <input type="number" name="qty[]" class="form-control" value="{{ $ln->qty}}" >
                                         <input type="hidden" name="id_line[]" value="{{$ln->id}}" >
-                                        <input type="hidden" name="buy[]" value="{{$ln->buy}}" >
+                                        <input type="hidden" name="produk[]" value="{{$ln->produk}}" >
+                                    </td>
+                                    @else
+                                    <td>{{ $ln->qty }}</td>
+                                    @endif
 
-                                    </td>
+                                    @if($dt->status !=2)
                                     <td>
-                                        Rp. {{number_format($ln->buy,0)}}
+                                        <input type="number" name="buy[]" class="form-control" value="{{ $ln->buy}}" >
                                     </td>
+                                    @else
+                                    <td>Rp.{{ number_format($ln->buy,0 )}}</td>
+                                    @endif
                                     <td>
                                         Rp. {{number_format($ln->grand_total,0)}}
                                     </td>
@@ -123,7 +131,9 @@
                             </tfoot>
                         </table>
                         <div>
+                            @if($dt->status !=2)
                             <button type= "submit" class="btn btn-block btn-primary">Simpan PO</button>
+                            @endif
                         </div>
                         </form>
                     </div>
