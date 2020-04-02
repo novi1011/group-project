@@ -30,6 +30,7 @@ class Produk_controller extends Controller
             'supplier'=>'required',
             'nama'=>'required',
             'kode'=>'required',
+            'stock'=>'required',
             'minimal_stock'=>'required',
             'harga'=>'required',
             'buy'=>'required'
@@ -38,7 +39,7 @@ class Produk_controller extends Controller
         $data=$request->except('_token');
         $data['created_at']=date('Y-m-d H:i:s');
         $data['updated_at']=date('Y-m-d H:i:s');
-        $data['stock']=0;
+        
 
         M_produk::insert($data);
 
@@ -62,6 +63,7 @@ class Produk_controller extends Controller
             'supplier'=>'required',
             'nama'=>'required',
             'kode'=>'required',
+            'stock'=>'required',
             'minimal_stock'=>'required',
             'harga'=>'required',
             'buy'=>'required'

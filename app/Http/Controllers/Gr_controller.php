@@ -41,7 +41,7 @@ class Gr_controller extends Controller
 
                     $pd = M_produk::find($produk);
                     $stock_sekarang =$pd->stock;
-                    $stock_baru =$stock_sekarang + $qty;
+                    $stock_baru =$stock_sekarang - $qty;
 
                     M_produk::where('id',$produk)->update([
                         'stock'=>$stock_baru

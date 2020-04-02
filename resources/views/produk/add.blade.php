@@ -45,10 +45,10 @@
                             <label for="exampleInputPassword1">Kode Produk</label>
                             <input type="text" name="kode" value="{{$kode}}" class="form-control" id="exampleInputPassword1" placeholder="Kode Produk" readonly>
                         </div>
-                        <!-- <div class="form-group">
+                        <div class="form-group">
                             <label for="exampleInputEmail1">Stock</label>
                             <input type="number" name="stock" class="form-control" id="exampleInputEmail1" placeholder="Stock Produk">
-                        </div> -->
+                        </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Minimal Stock</label>
                             <input type="number" name="minimal_stock" class="form-control" id="exampleInputEmail1" placeholder="Minimal Stock">
