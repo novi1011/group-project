@@ -19,7 +19,7 @@
                                 <th>Detail</th>
                                 <th>#</th>
                                 <th>Document_no</th>
-                                <td>Total_Item</td>
+                                <td>Total_Item</td> 
                                 <td>Total_Nilai</td>
                                 <th>Status</th>
                                 <th>Created_at</th>

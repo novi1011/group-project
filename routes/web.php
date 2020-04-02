@@ -61,6 +61,7 @@ Route::group(['middleware'=>'auth'], function(){
    
     Route::get('gr','Gr_controller@index');
     Route::get('gr/{id}','Gr_controller@detail');
+    Route::post('gr/{id}','Gr_controller@approved');
 });
 
 Auth::routes();
