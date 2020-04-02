@@ -62,6 +62,10 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('gr','Gr_controller@index');
     Route::get('gr/{id}','Gr_controller@detail');
     Route::post('gr/{id}','Gr_controller@approved');
+
+    //pos, penjualan barang
+    Route::get('pos', 'Pos_controller@index');
+    Route::get('produk/ajax/{kode}', 'Pos_controller@get_produk');
 });
 
 Auth::routes();
