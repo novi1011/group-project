@@ -11,6 +11,8 @@ use App\Models\Purchase_order_line;
 
 use App\Models\Goods_receipt;
 
+use PDF;
+
 
 
 class Po_controller extends Controller
@@ -23,7 +25,19 @@ class Po_controller extends Controller
         return view('po.index', compact('title','data'));
 
     }
-
+    public function pdf($id){
+        try {
+            $dt = Purchase_order::with('suppliers')->find($id);
+ 
+            $pdf = PDF::loadView('po.pdf',compact('dt'))->setPaper('a4', 'landscape');
+            return $pdf->stream();
+ 
+        } catch (\Exception $e) {
+            \Session::flash('gagal',$e->getMessage().' ! '.$e->getLine());
+        }
+        return redirect()->back();
+        
+    }
 
     public function add(){
         $title='ADD PO';
@@ -135,8 +149,6 @@ class Po_controller extends Controller
                 M_produk::where('id', $produk[$e])->update([
                     'buy'=>$data['buy']
                 ]);
-
-
 
             }
 
