@@ -66,6 +66,11 @@ Route::group(['middleware'=>'auth'], function(){
     //pos, penjualan barang
     Route::get('pos', 'Pos_controller@index');
     Route::get('produk/ajax/{kode}', 'Pos_controller@get_produk');
+
+    // Update Perusahaan
+    Route::get('update-perusahaan','Perusahaan_controller@index');
+    Route::post('update-perusahaan','Perusahaan_controller@update');
+
 });
 
 Auth::routes();

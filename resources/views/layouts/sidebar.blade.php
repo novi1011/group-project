@@ -16,8 +16,10 @@
 
         <li class="menu-sidebar"><a href="{{ url('/gr/') }}"><span class="fa fa-check-square-o"></span> Goods Receipt</span></a></li>
 
+        <li class="menu-sidebar"><a href="{{ url('/update-perusahaan') }}"><span class="glyphicon glyphicon-log-out"></span> Data Perusahaan</span></a></li>
+        
         <li class="menu-sidebar"><a href="{{ url('/keluar') }}"><span class="glyphicon glyphicon-log-out"></span> Logout</span></a></li>
 
-
+       
       </ul>
     </section>
