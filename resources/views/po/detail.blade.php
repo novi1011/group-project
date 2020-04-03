@@ -10,7 +10,6 @@
                 <p>
                     <button class="btn btn-sm btn-flat btn-warning btn-refresh"><i class="fa fa-refresh"></i> Refresh</button>
                     <a href="{{url('po')}}" class="btn btn-sm btn-flat btn-danger "><i class="fa fa-arrow-left"></i> </a>
-                    <a target="_blank" href="{{url('po/pdf/'.$dt->id)}}" class="btn btn-sm btn-flat btn-success "><i class="fa fa-download"></i> Export PDF</a>
                 </p>
             </div>
             <div class="box-body">
@@ -90,7 +89,7 @@
                                     <td>
                                         <input type="number" name="qty[]" class="form-control" value="{{ $ln->qty}}" >
                                         <input type="hidden" name="id_line[]" value="{{$ln->id}}" >
-                                        <input type="hidden" name="produk[]" value="{{$ln->produk}}" >
+                                        <input type="hidden" name="produk[]" value="{{$ln->produk}}">
                                     </td>
                                     @else
                                     <td>{{ $ln->qty }}</td>
@@ -98,7 +97,7 @@
 
                                     @if($dt->status !=2)
                                     <td>
-                                        <input type="number" name="buy[]" class="form-control" value="{{ $ln->buy}}" >
+                                        <input type="number" name="buy[]" class="form-control" value="{{ $ln->buy}}" readonly>
                                     </td>
                                     @else
                                     <td>Rp.{{ number_format($ln->buy,0 )}}</td>
