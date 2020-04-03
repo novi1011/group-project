@@ -7,17 +7,22 @@
         
 
         <li class="menu-sidebar"><a href="{{ url('/home') }}"><span class="fa fa-calendar-minus-o"></span> Beranda Dashboard</span></a></li>
-
+        @if(auth()->user()->role == 'supplier')
         <li class="menu-sidebar"><a href="{{ url('/supplier') }}"><span class="fa fa-meh-o"></span> Supplier</span></a></li>
-
+        @endif
+        @if(auth()->user()->role == 'supplier')
         <li class="menu-sidebar"><a href="{{ url('/produk') }}"><span class="fa fa-table"></span> Produk</span></a></li>
-
-        <li class="menu-sidebar"><a href="{{ url('/po/') }}"><span class="fa fa-shopping-cart"></span> Pesan produk</span></a></li>
-
-        <li class="menu-sidebar"><a href="{{ url('/gr/') }}"><span class="fa fa-check-square-o"></span> Goods Receipt</span></a></li>
-
-        <li class="menu-sidebar"><a href="{{ url('/update-perusahaan') }}"><span class="glyphicon glyphicon-log-out"></span> Data Perusahaan</span></a></li>
+        @endif
         
+        @if(auth()->user()->role == 'customer')
+        <li class="menu-sidebar"><a href="{{ url('/po/') }}"><span class="fa fa-shopping-cart"></span> Pesan produk</span></a></li>
+        @endif
+        @if(auth()->user()->role == 'admin')
+        <li class="menu-sidebar"><a href="{{ url('/gr/') }}"><span class="fa fa-check-square-o"></span> Goods Receipt</span></a></li>
+        @endif
+        @if(auth()->user()->role == 'admin')
+        <li class="menu-sidebar"><a href="{{ url('/update-perusahaan') }}"><span class="glyphicon glyphicon-log-out"></span> Data Perusahaan</span></a></li>
+        @endif
         <li class="menu-sidebar"><a href="{{ url('/keluar') }}"><span class="glyphicon glyphicon-log-out"></span> Logout</span></a></li>
 
        
