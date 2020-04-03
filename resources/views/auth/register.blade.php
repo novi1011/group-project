@@ -39,6 +39,12 @@
                             </div>
                         </div>
 
+                            <label for="email" class="col-md-4 control-label">Role</label>
+                            <div class="col-md-6">
+                                <input id="email" type="text" class="form-control" name="role" value="{{ old('email') }}" required>
+                            </div>
+                        
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
