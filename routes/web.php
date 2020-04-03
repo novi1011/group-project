@@ -73,7 +73,7 @@ Route::group(['middleware'=>['auth','checkRole:admin']], function(){
 
 });
 
-Route::group(['middleware'=>['auth','checkRole:supllier']], function(){
+Route::group(['middleware'=>['auth','checkRole:supplier']], function(){
     Route::get('/supplier', 'Supplier_controller@index');
 
     Route::get('/supplier/add', 'Supplier_controller@add');
