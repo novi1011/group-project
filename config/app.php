@@ -229,10 +229,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'DNS1D' => Milon\Barcode\Facades\DNS1DFacade::class,
         'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
-<<<<<<< HEAD
-      
-=======
->>>>>>> f7841d917e95f2a8c7b04538061a4561eccd3743
+
+
     ],
 
 ];
