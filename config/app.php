@@ -177,11 +177,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Milon\Barcode\BarcodeServiceProvider::class,
-<<<<<<< HEAD
-        
 
-=======
->>>>>>> f7841d917e95f2a8c7b04538061a4561eccd3743
+
     ],
 
     /*
