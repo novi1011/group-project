@@ -10,10 +10,7 @@
                 <p>
                     <button class="btn btn-sm btn-flat btn-warning btn-refresh"><i class="fa fa-refresh"></i> Refresh</button>
                     <a href="{{url('po')}}" class="btn btn-sm btn-flat btn-danger "><i class="fa fa-arrow-left"></i> </a>
-<<<<<<< HEAD
-                   
-=======
->>>>>>> f7841d917e95f2a8c7b04538061a4561eccd3743
+                  
                 </p>
             </div>
             <div class="box-body">
