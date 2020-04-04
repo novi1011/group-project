@@ -101,10 +101,13 @@
                       <p style="text-align:center">
                      <b> PT. JVC ELECTRONIC INDONESIA (JVC KENWOOD) </b></p>
                      <p style="text-align:center"> Merupakan sebuah perusahaan yang menghasilkan berbagai macam barang elektronik yang bermarkas di Yokohama, Jepang yang didirikan pada tahun 1927. Perusahaan ini merupakan penghasil televisi dan video recorder pertama. Didirikan pada tahun 1927 dengan nama "The Victor Talking Machine Company of Japan, Limited".Victor Company of Japan, Limited (日本ビクター株式会社 Nippon Bikutā Kabushiki-gaisha) (TYO: 6792), atau biasanya dipanggil JVC merupakan sebuah perusahaan yang menghasilkan berbagai macam barang elektronik yang bermarkas di Yokohama, Jepang yang didirikan pada tahun 1927. Perusahaan ini merupakan penghasil televisi dan video recorder pertama. Didirikan pada tahun 1927 dengan nama "The Victor Talking Machine Company of Japan, Limited".
-                      </p> 
+                      </p>  
+                      <p style="text-align:center"><a href="https://www.jvckenwood.com/en.html" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                      </p>
                   </div>
               </div>     
             </div>
+              
           </div>
 
   
