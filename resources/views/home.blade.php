@@ -63,13 +63,62 @@
         </div>
         <!-- ./col -->
       </div>
-<hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
-<!-- <div class="row"> -->
-    <!-- <div class="col-12"> -->
-       
-            <strong>Copyright © 2020 <a>Group_Project</a></strong> All rights
+<hr>
+          <div class="col-md-12">
+            <div class="box box-solid box-primary">
+              <div class="box-header">
+                <b class="box-title">PT. JVC ELECTRONICS INDONESIA</b> <hr>
+                  <div class="entry-header-custom-left">
+                    <p class="address "><label>Alamat: </label>
+                      <span id="frontend_address" class="listing_custom frontend_address">Jl. Surya Lestari Kav. 1-16B Suryacipta City of Industry, Ciampel Karawang 41361 Jawa Barat</span>
+										</p>
+                    <p class="email "><label>Email: </label>
+                      <span class="entry-email frontend_email listing_custom">yamaya-yuichi@jvckenwood.com</span>
+                    </p>
+
+                    <div class="social-share-link-wrap clearfix">
+                      <span class="listing_custom">
+                        <div class="share_link"></div>	
+                          <script>
+                            jQuery('.share_link').each(function() {
+                              if ( jQuery.trim( jQuery(this).text() ).length == 0 ) {
+                                if ( jQuery(this).children().length == 0 ) {
+                                  jQuery(this).text('');
+                                  // $(this).remove(); // remove empty paragraphs
+                                }
+                              }
+                            });
+                          </script>
+                            <!--Directory Share Link Coding End -->
+                      </span>    
+                    </div>
+                    <p class="custom_header_field phone" itemprop="phone">
+                       <label>Telepon:</label><span>(0267) 440520</span>  
+                    </p>
+									  <p class="custom_header_field fax" itemprop="fax">
+                       <label>Fax: </label><span>(0267) 440522 </span>  
+                    </p>
+                      <p class="justify">PT. JVC Electronics Indonesia adalah perusahaan penanam modal asing (FDI) dari Jepang JVC Kenwood Corporation yang bergerak di bidang elektronik pabrikan komponen. Perusahaan ini memproduksi berbagai barang elektronik seperti televisi dan perekam video barang elektronik lainnya.</p>
+                  <hr> <br>
+                  </div>
+              </div>     
+            </div>
+          </div>
+
+  
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="text-center">
+    <a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+    <a class="btn btn-social-icon btn-google"><i class="fa fa-google-plus"></i></a>
+    <a class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></a>
+    <a class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
+    <a class="btn btn-social-icon btn-tumblr"><i class="fa fa-tumblr"></i></a>
+    <a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+<br>
+    <strong>Copyright © 2020 <a>Group_Project</a></strong> All rights
             reserved.
-      
-    <!-- </div>
-</div> -->
+</div> 
+           
+  
 @endsection
