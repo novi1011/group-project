@@ -63,7 +63,7 @@
         </div>
         <!-- ./col -->
       </div>
-<hr>
+
           <div class="col-md-12">
             <div class="box box-solid box-primary">
               <div class="box-header">
@@ -98,8 +98,10 @@
 									  <p class="custom_header_field fax" itemprop="fax">
                        <label>Fax: </label><span>(0267) 440522 </span>  
                     </p>
-                      <p class="justify">PT. JVC Electronics Indonesia adalah perusahaan penanam modal asing (FDI) dari Jepang JVC Kenwood Corporation yang bergerak di bidang elektronik pabrikan komponen. Perusahaan ini memproduksi berbagai barang elektronik seperti televisi dan perekam video barang elektronik lainnya.</p>
-                  <hr> <br>
+                      <p style="text-align:center">
+                     <b> PT. JVC ELECTRONIC INDONESIA (JVC KENWOOD) </b></p>
+                     <p style="text-align:center"> merupakan sebuah perusahaan yang menghasilkan berbagai macam barang elektronik yang bermarkas di Yokohama, Jepang yang didirikan pada tahun 1927. Perusahaan ini merupakan penghasil televisi dan video recorder pertama. Didirikan pada tahun 1927 dengan nama "The Victor Talking Machine Company of Japan, Limited".Victor Company of Japan, Limited (日本ビクター株式会社 Nippon Bikutā Kabushiki-gaisha) (TYO: 6792), atau biasanya dipanggil JVC merupakan sebuah perusahaan yang menghasilkan berbagai macam barang elektronik yang bermarkas di Yokohama, Jepang yang didirikan pada tahun 1927. Perusahaan ini merupakan penghasil televisi dan video recorder pertama. Didirikan pada tahun 1927 dengan nama "The Victor Talking Machine Company of Japan, Limited".
+                      </p> 
                   </div>
               </div>     
             </div>
@@ -107,7 +109,7 @@
 
   
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
 <div class="text-center">
     <a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
     <a class="btn btn-social-icon btn-google"><i class="fa fa-google-plus"></i></a>
