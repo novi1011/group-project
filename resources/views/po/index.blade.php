@@ -9,7 +9,9 @@
             <div class="box-header">
                 <p>
                     <button class="btn btn-sm btn-flat btn-warning btn-refresh"><i class="fa fa-refresh"></i> Refresh</button>
+                    @if(auth()->user()->role=='customer')
                     <a href="{{url('po/add')}}" class="btn btn-sm btn-flat btn-success"><i class="fa fa-plus"></i> Tambah Data PO</a>
+                    @endif
                 </p>
             </div>
             <div class="box-body">
@@ -19,8 +21,10 @@
                             <tr>
                                 <th>#</th>
                                 <!-- <th>delete</th> -->
+                                @if(auth()->user()->role=='customer')
                                 <th>Detail</th>
                                 <th>Approved</th>
+                                @endif
                                 <th>Document No</th>
                                 <th>Supplier</th>
                                 <th>Total Item</th>
@@ -38,6 +42,7 @@
                                             <i class="fa fa-trash btn-danger"></i>
                                         </a>
                                     </td> -->
+                                    @if(auth()->user()->role=='customer')
                                     <td>
                                         <a href="{{url('po/'.$dt->id)}}">
                                             <i class="fa fa-eye"></i>
@@ -47,6 +52,7 @@
                                         <a href="{{url('po/approved/'.$dt->id)}}">
                                             <i class="fa fa-paint-brush"></i>
                                         </a>
+                                    @endif
                                     </td>
                                     <td>{{$dt->document_no}}</td>
                                     <td>{{$dt->suppliers->nama}}</td>

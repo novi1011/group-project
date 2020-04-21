@@ -13,8 +13,10 @@
             <div class="box-header">
                 <p>
                     <button class="btn btn-sm btn-flat btn-warning btn-refresh"><i class="fa fa-refresh"></i> Refresh</button>
+                    @if(auth()->user()->role == 'supplier')
                     <a href="{{url('supplier/add')}}" class="btn btn-sm btn-flat btn-success"><i class="fa fa-plus"></i> Tambah Data Supplier</a>
                     <button class="btn btn-sm btn-flat btn-danger delete_all" data-url="{{ url('myproductsDeleteAll') }}">Delete All Selected</button>
+                    @endif
                 </p>
             </div>
             <div class="box-body">
@@ -29,7 +31,9 @@
                                 <th>alamat</th>
                                 <th>created_at</th>
                                 <th>updated_at</th>
+                                @if(auth()->user()->role=='supplier')
                                 <th>Action</th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>
@@ -44,10 +48,12 @@
                                     <td>{{$dt->created_at}}</td>
                                     <td>{{$dt->updated_at}}</td>
                                     <td>
+                                        @if(auth()->user()->role=='supplier')
                                         <div style="width:60px">
                                             <a href="{{url('supplier/'.$dt->id)}}" class="btn btn-primary btn-xs btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a> 
                                             <button href="{{url('supplier/'.$dt->id)}}" class="btn btn-danger btn-xs btn-hapus" id="delete"><i class="fa fa-trash-o"></i></button>
                                         </div>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

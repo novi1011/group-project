@@ -22,20 +22,27 @@ Route::get('/keluar',function (){
     return redirect('/login');
 });
 
+
+
+
+
+
+
+
 Route::group(['middleware'=>['auth','checkRole:admin']], function(){
-    Route::get('/supplier', 'Supplier_controller@index');
+    Route::get('/supplier/index', 'Supplier_controller@index');
 
-    Route::get('/supplier/add', 'Supplier_controller@add');
-    Route::post('/supplier/add', 'Supplier_controller@store');
+    // Route::get('/supplier/add', 'Supplier_controller@add');
+    // Route::post('/supplier/add', 'Supplier_controller@store');
 
-    Route::get('/supplier/{id}','Supplier_controller@edit');
-    Route::put('/supplier/{id}','Supplier_controller@update');
+    // Route::get('/supplier/{id}','Supplier_controller@edit');
+    // Route::put('/supplier/{id}','Supplier_controller@update');
 
-    Route::delete('/supplier/{id}','Supplier_controller@delete');
-    Route::delete('myproductsDeleteAll', 'Supplier_Controller@deleteAll');
+    // Route::delete('/supplier/{id}','Supplier_controller@delete');
+    // Route::delete('myproductsDeleteAll', 'Supplier_Controller@deleteAll');
 
     //route untuk produk by Aditya Oktaviana
-    Route::get('/produk','produk_controller@index');
+    Route::get('/produk/index','produk_controller@index');
     // Route::get('/produk/detail/{id}','produk_controller@detail');
 
     // Route::get('/produk/add','produk_controller@add');
@@ -48,7 +55,7 @@ Route::group(['middleware'=>['auth','checkRole:admin']], function(){
     // Route::delete('myproductsDeleteAll', 'produk_Controller@deleteAll');
 
     // Route Untuk Purchase Order By Aditya Oktaviana
-    // Route::get('/po','Po_controller@index');
+    Route::get('/po/index','Po_controller@index');
     // Route::get('po/add','Po_controller@add');
     // Route::get('po/produk/{supplier}','Po_controller@get_produk');
     // Route::post('po/add','Po_controller@store');
@@ -72,6 +79,18 @@ Route::group(['middleware'=>['auth','checkRole:admin']], function(){
     Route::post('update-perusahaan','Perusahaan_controller@update');
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::group(['middleware'=>['auth','checkRole:supplier']], function(){
     Route::get('/supplier', 'Supplier_controller@index');
@@ -123,6 +142,21 @@ Route::group(['middleware'=>['auth','checkRole:supplier']], function(){
     // Route::post('update-perusahaan','Perusahaan_controller@update');
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::group(['middleware'=>['auth','checkRole:customer']], function(){
     // Route::get('/supplier', 'Supplier_controller@index');
