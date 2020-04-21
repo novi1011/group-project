@@ -21,9 +21,6 @@
         <li class="menu-sidebar"><a href="{{ url('/supplier') }}"><span class="fa fa-user-plus"></span> Add Supplier Data</span></a></li>
         @endif
         @if(auth()->user()->role == 'admin')
-        <li class="menu-sidebar"><a href="{{ url('/supplier/index') }}"><span class="fa fa-meh-o"></span> Supplier List</span></a></li>
-        @endif
-        @if(auth()->user()->role == 'admin')
         <li class="menu-sidebar"><a href="{{ url('/produk/index') }}"><span class="fa fa-table"></span> Product List</span></a></li>
         @endif
         @if(auth()->user()->role == 'admin')
