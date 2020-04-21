@@ -10,10 +10,9 @@ use App\Models\Purchase_order;
 use App\Models\Purchase_order_line;
 
 use App\Models\Goods_receipt;
-
 use PDF;
-
-
+use Excel;
+use App\Exports\supplier;
 
 class Po_controller extends Controller
 {
@@ -26,19 +25,25 @@ class Po_controller extends Controller
 
     }
     public function pdf($id){
-        try {
-            $dt = Purchase_order::with('suppliers')->find($id);
- 
+      try {
+            // $dt = ['title' =>'Hello wolrd'];
+            $dt = Purchase_order_line::take(2)->get();
+           
             $pdf = PDF::loadView('po.pdf',compact('dt'))->setPaper('a4', 'landscape');
-            return $pdf->stream();
+            return $pdf->download('laporan.pdf');
  
         } catch (\Exception $e) {
             \Session::flash('gagal',$e->getMessage().' ! '.$e->getLine());
+            // return ['message'=> 'salah'];
         }
-        return redirect()->back();
+        // return redirect()->back();
         
     }
-
+    public function exportExcel(){
+        $export = 'laporan_po_'.date('Y-m-d_H-i-s').'.xlsx';
+        return Excel::download(new supplier, $export);
+        
+    }
     public function add(){
         $title='ADD PO';
         $docno='PO-'.rand();

@@ -157,10 +157,11 @@ Route::group(['middleware'=>['auth','checkRole:customer']], function(){
     Route::get('po/approved/{id}','Po_controller@approved');
     Route::get('po/{id}','Po_controller@detail');
     Route::put('po/{id}','Po_controller@update');
+    Route::get('po/pdf/{id}', 'Po_controller@pdf');
     Route::delete('po/line/{id}','Po_controller@hapus_line');
     Route::delete('po/hapus/{id}','Po_controller@hapus');
 
-   
+    Route::get('/export-excel', 'Po_controller@exportExcel');
     // Route::get('gr','Gr_controller@index');
     // Route::get('gr/{id}','Gr_controller@detail');
     // Route::post('gr/{id}','Gr_controller@approved');

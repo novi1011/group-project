@@ -10,6 +10,8 @@
                 <p>
                     <button class="btn btn-sm btn-flat btn-warning btn-refresh"><i class="fa fa-refresh"></i> Refresh</button>
                     <a href="{{url('po')}}" class="btn btn-sm btn-flat btn-danger "><i class="fa fa-arrow-left"></i> </a>
+                   
+                    <a target= "_blank" href="{{url('po/pdf/'.$dt->id)}}" class="btn btn-sm btn-flat btn-success "><i class="fa fa-download"></i> Export PDF</a>
                   
                 </p>
             </div>
