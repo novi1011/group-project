@@ -13,10 +13,8 @@
             <div class="box-header">
                 <p>
                     <button class="btn btn-sm btn-flat btn-warning btn-refresh"><i class="fa fa-refresh"></i> Refresh</button>
-                    
                     <a href="{{url('supplier/add')}}" class="btn btn-sm btn-flat btn-success"><i class="fa fa-plus"></i> Tambah Data Supplier</a>
                     <button class="btn btn-sm btn-flat btn-danger delete_all" data-url="{{ url('myproductsDeleteAll') }}">Delete All Selected</button>
-                    
                 </p>
             </div>
             <div class="box-body">

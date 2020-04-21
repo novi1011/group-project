@@ -23,7 +23,9 @@
                <div class="table-reponsive">
                     <table class="table table-hover myTable">
                         <thead>
+                            
                             <th width="50px"><input type="checkbox" id="master"></th>
+                            
                             <th>#</th>
                             <th>Supplier</th>
                             <th>Nama Produk</th>
@@ -34,9 +36,8 @@
                             <th>Harga Jual Produk</th>
                             <th>Created at</th>
                             <th>Updated at</th>
-                            @if(auth()->user()->role=='supplier')
                             <th>Action</th>
-                            @endif
+                            
                         </thead>
                         <tbody>
                         @if($data->count())
@@ -60,7 +61,7 @@
                                         <button href="{{url('produk/'.$dt->id)}}" class="btn btn-danger btn-xs btn-hapus" id="delete"><i class="fa fa-trash-o"></i></button>
                                         <a href="{{url('produk/detail/'.$dt->id)}}" class="btn btn-primary btn-xs btn-lihat" id="edit"><i class="fa fa-eye"></i></a>
                                     </div>
-                                    @endif
+                                   @endif
                                 </td>
                             </tr>
                         @endforeach
@@ -91,6 +92,7 @@
     })
 </script>
 
+@if(auth()->user()->role=='supplier')
 <script type="text/javascript">
     $(document).ready(function () {
 
@@ -195,5 +197,6 @@
         });
     });
 </script>
+@endif
  
 @endsection
