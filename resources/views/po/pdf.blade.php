@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Invoice</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
- 
-    <!-- <link rel="stylesheet" href="{{asset('adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css')}}"> -->
- 
+   
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
    
    
 </head>
@@ -17,12 +16,16 @@
 
 <div class="container">
 		<center>
-			<h4>Laporan Purchase Order</h4>
+			<h4>LAPORAN PURCHASE ORDER</h4>
 			<h5><a target="_blank"></a></h5>
 		</center>
+		
 		<br/>
-		<table class='table table-bordered'>
-			<thead>
+	<div class ="row">
+		<div class ="col-xs-12">
+		<table class='table table-bordered' >
+		
+			<tbody>
 				<tr>
 					<th>id</th>
 					<th>Purchase Order</th>
@@ -31,21 +34,28 @@
 					<th>Buy</th>
 					<th>Grand Total</th>
 				</tr>
-			</thead>
-			<tbody>
 				@php $i=1 @endphp
 				@foreach($dt as $p)
 				<tr>
 					<td>{{ $i++ }}</td>
+					<td>{{$p->grand_total}}</td>
 					<td>{{$p->purchase_order}}</td>
 					<td>{{$p->produk}}</td>
 					<td>{{$p->qty}}</td>
 					<td>{{$p->buy}}</td>
-					<td>{{$p->grand_total}}</td>
+				
+				
 				</tr>
+			</tbody>
+			<tbody>
+				
+				
 				@endforeach
 			</tbody>
 		</table>
+		</div>
+	</div>
+	
  
 	</div>
 </body>

@@ -27,10 +27,11 @@ class Po_controller extends Controller
     public function pdf($id){
       try {
             // $dt = ['title' =>'Hello wolrd'];
-            $dt = Purchase_order_line::take(2)->get();
+            $dt = Purchase_order_line::get();
            
             $pdf = PDF::loadView('po.pdf',compact('dt'))->setPaper('a4', 'landscape');
-            return $pdf->download('laporan.pdf');
+            return $pdf->stream();
+            // return $pdf->download('laporan.pdf');
  
         } catch (\Exception $e) {
             \Session::flash('gagal',$e->getMessage().' ! '.$e->getLine());
