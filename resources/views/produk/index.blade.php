@@ -13,15 +13,19 @@
             <div class="box-header">
                 <p>
                     <button class="btn btn-sm btn-flat btn-warning btn-refresh"><i class="fa fa-refresh"></i> Refresh</button>
+                    @if(auth()->user()->role=='supplier')
                     <a href="{{url('produk/add')}}" class="btn btn-sm btn-flat btn-success"><i class="fa fa-plus"></i> Tambah Data Produk</a>
                     <button class="btn btn-sm btn-flat btn-danger delete_all" data-url="{{ url('myproductsDeleteAll') }}">Delete All Selected</button>
+                    @endif
                 </p>
             </div>
             <div class="box-body">
                <div class="table-reponsive">
                     <table class="table table-hover myTable">
                         <thead>
+                            
                             <th width="50px"><input type="checkbox" id="master"></th>
+                            
                             <th>#</th>
                             <th>Supplier</th>
                             <th>Nama Produk</th>
@@ -33,6 +37,7 @@
                             <th>Created at</th>
                             <th>Updated at</th>
                             <th>Action</th>
+                            
                         </thead>
                         <tbody>
                         @if($data->count())
@@ -50,11 +55,13 @@
                                 <td>{{$dt->created_at}}</td>
                                 <td>{{$dt->updated_at}}</td>
                                 <td>
+                                    @if(auth()->user()->role=='supplier')
                                     <div style="width:60px">
                                         <a href="{{url('produk/'.$dt->id)}}" class="btn btn-primary btn-xs btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a> 
                                         <button href="{{url('produk/'.$dt->id)}}" class="btn btn-danger btn-xs btn-hapus" id="delete"><i class="fa fa-trash-o"></i></button>
                                         <a href="{{url('produk/detail/'.$dt->id)}}" class="btn btn-primary btn-xs btn-lihat" id="edit"><i class="fa fa-eye"></i></a>
                                     </div>
+                                   @endif
                                 </td>
                             </tr>
                         @endforeach
@@ -85,6 +92,7 @@
     })
 </script>
 
+@if(auth()->user()->role=='supplier')
 <script type="text/javascript">
     $(document).ready(function () {
 
@@ -189,5 +197,6 @@
         });
     });
 </script>
+@endif
  
 @endsection

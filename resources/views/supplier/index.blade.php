@@ -29,7 +29,9 @@
                                 <th>alamat</th>
                                 <th>created_at</th>
                                 <th>updated_at</th>
+                                
                                 <th>Action</th>
+                               
                             </tr>
                         </thead>
                         <tbody>
@@ -44,10 +46,12 @@
                                     <td>{{$dt->created_at}}</td>
                                     <td>{{$dt->updated_at}}</td>
                                     <td>
+                                        
                                         <div style="width:60px">
                                             <a href="{{url('supplier/'.$dt->id)}}" class="btn btn-primary btn-xs btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a> 
                                             <button href="{{url('supplier/'.$dt->id)}}" class="btn btn-danger btn-xs btn-hapus" id="delete"><i class="fa fa-trash-o"></i></button>
                                         </div>
+                                        
                                     </td>
                                 </tr>
                             @endforeach
