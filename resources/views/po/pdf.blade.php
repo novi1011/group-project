@@ -38,11 +38,11 @@
 				@foreach($dt as $p)
 				<tr>
 					<td>{{ $i++ }}</td>
-					<td>{{$p->grand_total}}</td>
 					<td>{{$p->purchase_order}}</td>
 					<td>{{$p->produk}}</td>
 					<td>{{$p->qty}}</td>
 					<td>{{$p->buy}}</td>
+					<td>{{$p->grand_total}}</td>
 				
 				
 				</tr>

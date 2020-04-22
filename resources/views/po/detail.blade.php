@@ -19,8 +19,8 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <table class="table">
-                            <tbody>
+                        <table class="table ">
+                            <thead class="thead-dark">
                                 <th>Document No</th>
                                 <td>:</td>
                                 <td>{{$dt->document_no}}</td>
@@ -28,7 +28,7 @@
                                 <th>Supplier</th>
                                 <td>:</td>
                                 <td>{{$dt->suppliers->nama}}</td>
-                            </tbody>
+                            </thead class="thead-dark">
                         </table>
                     </div>
                 
